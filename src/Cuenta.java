@@ -66,20 +66,33 @@ public class Cuenta {
         return tipoDeInteres;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNombre(String nombre) throws Exception {
+       if (nombre.equals("")) {
+            throw new Exception("El nombre no puede estar vacio");
+        }
+       this.nombre = nombre;
     }
 
-    public void setCuenta(String cuenta) {
+    public void setCuenta(String cuenta) throws Exception{
+        if (cuenta.equals("")) {
+            throw new Exception("La cuenta no puede estar vacia");
+        }
         this.cuenta = cuenta;
     }
 
-    public void setSaldo(double saldo) {
+    public void setSaldo(double saldo) throws Exception{
+        if (saldo < 0) {
+            throw new Exception("Saldo negativo");
+        }
         this.saldo = saldo;
     }
 
-    public void setTipoDeInteres(double tipoDeInteres) {
-        this.tipoDeInteres = tipoDeInteres;
+    public void setTipoDeInteres(double tipoDeInteres) throws Exception{
+        if (tipoDeInteres < 0) {
+            throw new Exception("El tipo de interes no puede ser menor a 0");
+        }
+        this.tipoDeInteres=tipoDeInteres;
     }
+    
 
 }
