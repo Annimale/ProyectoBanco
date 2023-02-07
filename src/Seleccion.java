@@ -13,8 +13,10 @@ public class Seleccion {
 
     public static void main(String[] args) {
         Scanner tcl = new Scanner(System.in);
-
+        MetodosCuenta Pollo= new MetodosCuenta();
         int opcion;
+                
+        do {
         System.out.println("====== BANCO UNIVERSAL ======");
         System.out.println("Seleccione una opción: ");
         System.out.println();
@@ -24,12 +26,11 @@ public class Seleccion {
         System.out.println("4. Anular cuentas");
         System.out.println("5. Listado de cuentas");
         System.out.println("0. Salir");
-        
-        do {
             opcion = tcl.nextInt();
             switch (opcion) {
                 case 1:
                     System.out.println("Estoy en metodo 1");
+                   Pollo.NuevaCuenta();
                     break;
                 case 2:
                     System.out.println("Estoy en metodo 2");
