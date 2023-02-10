@@ -13,7 +13,7 @@ public class Seleccion {
 
     public static void main(String[] args) {
         Scanner tcl = new Scanner(System.in);
-        MetodosCuenta Pollo= new MetodosCuenta();
+        MetodosCuenta CreadorCuenta= new MetodosCuenta();
         int opcion;
                 
         do {
@@ -30,7 +30,7 @@ public class Seleccion {
             switch (opcion) {
                 case 1:
                     System.out.println("Estoy en metodo 1");
-                   Pollo.NuevaCuenta();
+                   CreadorCuenta.NuevaCuenta();
                     break;
                 case 2:
                     System.out.println("Estoy en metodo 2");
