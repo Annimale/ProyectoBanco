@@ -19,7 +19,7 @@ public class Seleccion {
 
         do {
             System.out.println("====== BANCO UNIVERSAL ======");
-            System.out.println("Seleccione una opción: ");
+            System.out.println("Seleccione una opcion: ");
             System.out.println();
             System.out.println("1. Alta de cuentas");
             System.out.println("2. Consulta de una cuenta");
@@ -35,7 +35,7 @@ public class Seleccion {
                     break;
                 case 2:
                     System.out.println("Realizando consulta de su cuenta");
-                    CreadorCuenta.verCuenta(cuentaprueba);
+                    CreadorCuenta.ConsultarCuenta();
                     break;
                 case 3:
                     System.out.println("Modificando su cuenta");
