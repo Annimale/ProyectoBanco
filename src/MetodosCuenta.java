@@ -97,34 +97,45 @@ public class MetodosCuenta {
     }
 
     public void ModificarCuenta() {
-        Scanner tcl = new Scanner(System.in);
         int posicion = cuentasTotales.indexOf(buscarCuenta());
-        System.out.println("Introduzca su nuevo nombre");
+        Scanner tcl = new Scanner(System.in);
+
+        System.out.print("Introduzca el numero de cuenta de su nueva cuenta: ");
+        String nCuenta = tcl.nextLine();
         try {
-            String newName = tcl.nextLine();
-            cuentasTotales.get(posicion).setNombre(newName);
-
-        } catch (errorDatos a) {
-            System.out.println(a.getMessage());
+            cuentasTotales.get(posicion).setCuenta(nCuenta);
+        } catch(errorDatos e) {
+            System.out.println(e.getMessage());
         }
+        
 
-        System.out.println("Introduzca su nuevo saldo");
+        System.out.print("\nIntroduzca el nombre de su nueva cuenta: ");
+        String nombre = tcl.nextLine();
         try {
-            int newSaldo = tcl.nextInt();
-            cuentasTotales.get(posicion).setSaldo(newSaldo);
-        } catch (errorDatos a) {
-            System.out.println(a.getMessage());
+            cuentasTotales.get(posicion).setNombre(nombre);
+        } catch(errorDatos e) {
+            System.out.println(e.getMessage());
         }
+        
 
-        System.out.println("Introduzca su nuevo tipo de interes");
+        System.out.print("\nIntroduzca el saldo de su nueva cuenta: ");
+        double saldo = tcl.nextDouble();
+        
         try {
-            int newInteres = tcl.nextInt();
-            cuentasTotales.get(posicion).setTipoDeInteres(newInteres);
-
-        } catch (errorDatos a) {
-            System.out.println(a.getMessage());
+            cuentasTotales.get(posicion).setSaldo(saldo);
+        } catch(errorDatos e) {
+            System.out.println(e.getMessage());
         }
+        
 
+        System.out.print("\nIntroduzca el interes de su nueva cuenta: ");
+        double tipoDeInteres = tcl.nextDouble();
+        try {
+            cuentasTotales.get(posicion).setTipoDeInteres(tipoDeInteres);
+        } catch(errorDatos e) {
+            System.out.println(e.getMessage());
+        }
+        
     }
 
     public void anularCuenta() {
@@ -147,7 +158,7 @@ public class MetodosCuenta {
     public void ConsultarCuenta() {
         int posicion = cuentasTotales.indexOf(buscarCuenta());
         System.out.println("\nEl nombre de la cuenta es " + cuentasTotales.get(posicion).getNombre());
-        System.out.println("El número de la cuenta es " + cuentasTotales.get(posicion).getCuenta());
+        System.out.println("El numero de la cuenta es " + cuentasTotales.get(posicion).getCuenta());
         System.out.println("El saldo de la cuenta es " + cuentasTotales.get(posicion).getSaldo());
         System.out.println("El interés de la cuenta es " + cuentasTotales.get(posicion).getTipoDeInteres());
     }
